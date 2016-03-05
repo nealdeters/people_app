@@ -2,6 +2,12 @@
 <div ng-app="app">
   <!-- {{ 1 + 1 }} -->
   <div ng-controller="peopleCtrl">
+    Name: <input ng-model="newPeopleName">
+    <br>
+    Bio: <input ng-model="newPeopleBio">
+    <br>
+    <!-- Rating: <input ng-model="newPeopleBioVisible"> -->
+    <button ng-click="addPeople(newPeopleName, newPeopleBio)">Add Person</button>
     <div id="peoples">
       <ul>
         <li ng-repeat="people in peoples track by $index" ng-click="toggle(people)">
@@ -17,13 +23,6 @@
     </div>
       
       <br>
-      Name: <input ng-model="newPeopleName">
-      <br>
-      Bio: <input ng-model="newPeopleBio">
-      <br>
-      <!-- Rating: <input ng-model="newPeopleBioVisible"> -->
-      <button ng-click="addPeople(newPeopleName, newPeopleBio)">Add Person</button>
-
       <br>
       <br>
       <span>Total People Count: {{ peoples.length }} </span>
